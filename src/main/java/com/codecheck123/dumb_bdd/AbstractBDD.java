@@ -1,11 +1,12 @@
 package com.codecheck123.dumb_bdd;
 
-import com.codecheck123.dumb_bdd.args.Arguments;
+import java.util.List;
 
-public class AbstractBDD {
+public abstract class AbstractBDD {
 
-	protected void buildArgs(String givenInput, ExpressionRunner runner) {
-		Arguments args = new Arguments("");
+	protected void evaluateExpression(String givenInput, ExpressionRunner runner) {
+		List<String> argsCollection = ArgumentsParser.parseExpressionToArguments(givenInput);
+		Arguments args = new Arguments(argsCollection);
 		runner.expression(args);
 	}
 }
