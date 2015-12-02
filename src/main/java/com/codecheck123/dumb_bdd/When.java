@@ -1,6 +1,9 @@
 package com.codecheck123.dumb_bdd;
 
-public class When {
+import com.codecheck123.dumb_bdd.report.ConsoleReporter;
+import com.codecheck123.dumb_bdd.report.Reporter;
+
+public class When extends AbstractBDD {
 
 	private final Given given;
 	private final String when;
@@ -11,9 +14,16 @@ public class When {
 	}
 	
 	public void then(String then, ExpressionRunner runner){
-		System.out.println(given.getUserStory().getStory());
-		given.getAll().forEach(g -> System.out.println(g));
-		System.out.println(when);
-		System.out.println(then);
+		AssertionError assErr = null;
+		try{
+			evaluateExpression(then, runner);
+		}catch(AssertionError e){
+			assErr = e;
+			throw e;
+		}finally{
+			String userStory = given.getUserStory().getStory();
+			Reporter reporter = new ConsoleReporter(userStory,given.getAll(),when,then,assErr);
+			reporter.write();
+		}
 	}
 }
