@@ -1,48 +1,36 @@
 package com.codecheck123.dumb_bdd;
 
-import java.util.Iterator;
+import java.util.ArrayList;
 import java.util.List;
-
-import com.codecheck123.dumb_bdd.args.Fifth;
-import com.codecheck123.dumb_bdd.args.First;
-import com.codecheck123.dumb_bdd.args.Fourth;
-import com.codecheck123.dumb_bdd.args.Second;
-import com.codecheck123.dumb_bdd.args.Third;
 
 
 public class Arguments {
-	private final First first;
-	private final Second second;
-	private final Third third;
-	private final Fourth fourth;
-	private final Fifth fifth;
+	private final List<Arg> args;
 	
 	public Arguments(List<String> args){
-		Iterator<String> itr = args.iterator();
-		this.first = itr.hasNext() ? new First(itr.next()) : null;
-		this.second = itr.hasNext() ? new Second(itr.next()) : null;
-		this.third = itr.hasNext() ? new Third(itr.next()) : null;
-		this.fourth = itr.hasNext() ? new Fourth(itr.next()) : null;
-		this.fifth = itr.hasNext() ? new Fifth(itr.next()) : null;
+		this.args = new ArrayList<Arg>(args.size());
+		for(String arg : args){
+			this.args.add(new Arg(arg));
+		}
 	}
 
-	public First first() {
-		return first;
+	public Arg first() {
+		return args.get(0);
 	}
 	
-	public Second second() {
-		return second;
+	public Arg second() {
+		return args.get(1);
 	}
 	
-	public Third third() {
-		return third;
+	public Arg third() {
+		return args.get(2);
 	}
 	
-	public Fourth fourth() {
-		return fourth;
+	public Arg fourth() {
+		return args.get(3);
 	}
 	
-	public Fifth fith() {
-		return fifth;
+	public Arg fith() {
+		return args.get(4);
 	}
 }
