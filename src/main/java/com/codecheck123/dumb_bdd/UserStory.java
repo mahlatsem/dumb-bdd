@@ -9,7 +9,7 @@ public class UserStory extends AbstractBDD {
 	}
 	
 	public Given given(String givenInput, ExpressionRunner runner){
-		return new Given(this,givenInput);
+		return new Given(this,givenInput, runner);
 	}
 
 	String getStory() {
