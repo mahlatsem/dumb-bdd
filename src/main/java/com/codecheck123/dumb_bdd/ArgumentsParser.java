@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 
 public class ArgumentsParser {
 	
-	private final static Pattern pattern = Pattern.compile("(?:^|\\s)'([^']*?)'");
+	private final static Pattern pattern = Pattern.compile("(?:^|\\s|,)'([^']*?)'");
 
 	public static List<String> parseExpressionToArguments(String givenInput) {
 		List<String> matches = new ArrayList<>(5);

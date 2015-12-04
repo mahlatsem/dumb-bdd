@@ -35,7 +35,7 @@ public class ArgumentsParserTest {
 	}
 	
 	@Test
-	public void testParseExpressionToArguments_withComma() {
+	public void testParseExpressionToArguments_withSingleComma() {
 		//given
 		String input = "some comma separated arguments are '30', 'baa'";
 		
@@ -45,6 +45,18 @@ public class ArgumentsParserTest {
 		//then string array of size 2 should be returned with 30 in index 0
 		assertEquals(2, args.size());
 		assertEquals("30", args.get(0));
+	}
+	
+	@Test
+	public void testParseExpressionToArguments_withMultipleCommas() {
+		//given
+		String input = "should be have headers 'abc','def', 'ghi' & 'jkl'";
+		
+		//when: parsing the input
+		List<String> args = ArgumentsParser.parseExpressionToArguments(input);
+		
+		//then string array of size 2 should be returned with 30 in index 0
+		assertEquals(4, args.size());
 	}
 	
 	@Test
