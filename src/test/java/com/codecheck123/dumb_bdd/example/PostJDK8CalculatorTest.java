@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import com.codecheck123.dumb_bdd.UserStory;
 
-public class CalculatorTest {
+public class PostJDK8CalculatorTest {/*
 	private int result = 0;
 
 	@Test
@@ -51,4 +51,4 @@ public class CalculatorTest {
 			assertEquals(args.first().asInt(), result);
 		});
 	}
-}
+*/}
