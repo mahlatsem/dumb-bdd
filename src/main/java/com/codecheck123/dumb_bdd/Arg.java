@@ -9,10 +9,18 @@ public class Arg {
 	}
 
 	public int asInt(){
-		return (int)arg;
+		return Integer.parseInt((String) arg);
+	}
+	
+	public double asDouble(){
+		return Double.parseDouble((String) arg);
 	}
 	
 	public String asString(){
 		return (String)arg;
+	}
+	
+	public boolean asBoolean(){
+		return Boolean.valueOf((String) arg);
 	}
 }
