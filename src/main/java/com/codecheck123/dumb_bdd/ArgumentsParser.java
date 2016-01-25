@@ -10,7 +10,7 @@ public class ArgumentsParser {
 	private final static Pattern pattern = Pattern.compile("(?:^|\\s|,)'([^']*?)'");
 
 	public static List<String> parseExpressionToArguments(String givenInput) {
-		List<String> matches = new ArrayList<>(5);
+		List<String> matches = new ArrayList<String>(5);
 		Matcher m = pattern.matcher(givenInput);
 		while(m.find()){
 			matches.add(m.group(1));

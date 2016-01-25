@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Calculator {
-	List<Integer> numbers = new ArrayList<>();
+	List<Integer> numbers = new ArrayList<Integer>();
 
 	public void enter(int number) {
 		numbers.add(number);
@@ -12,13 +12,13 @@ public class Calculator {
 
 	public int command(String cmd) {
 		int result = 0;
-		switch(cmd){
-		case "add":
+		switch(MathOperation.valueOf(cmd)){
+		case ADD:
 			for(Integer number : numbers){
 				result += number;
 			}
 			break;
-		case "minus":
+		case MINUS:
 			result = numbers.get(0);
 			for (int i = 1; i < numbers.size(); i++) {
 				result -= numbers.get(i);
