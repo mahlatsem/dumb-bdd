@@ -10,8 +10,23 @@ public class Calculator {
 		numbers.add(number);
 	}
 
-	public void command(String asString) {
-		// TODO Auto-generated method stub
+	public int command(String cmd) {
+		int result = 0;
+		switch(cmd){
+		case "add":
+			for(Integer number : numbers){
+				result += number;
+			}
+			break;
+		case "minus":
+			result = numbers.get(0);
+			for (int i = 1; i < numbers.size(); i++) {
+				result -= numbers.get(i);
+			}
+			break;
+		}
+		
+		return Math.abs(result);
 	}
 
 }
