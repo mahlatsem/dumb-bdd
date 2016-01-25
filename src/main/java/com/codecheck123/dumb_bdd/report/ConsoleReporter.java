@@ -27,7 +27,7 @@ public class ConsoleReporter extends Reporter {
 		if(assertionError != null){
 			System.out.println("Failed: "+assertionError.getMessage());
 		}else{
-			System.out.println("Passed");
+			System.out.println("Passed\n");
 		}
 	}
 }
