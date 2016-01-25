@@ -16,7 +16,7 @@ public class When extends AbstractBDD {
 		this.when = bddExpression;
 	}
 	
-	public void then(String then, ExpressionRunner runner){
+	public void then(final String then, ExpressionRunner runner){
 		try{
 			evaluateExpression(then, runner);
 		}catch(AssertionError e){
@@ -25,8 +25,6 @@ public class When extends AbstractBDD {
 		}finally{
 			Executors.newCachedThreadPool().execute(
 					new Runnable() {
-
-						@Override
 						public void run() {
 							String userStory = given.getUserStory().getStory();
 							Reporter reporter = new ConsoleReporter(userStory,given.getAll(),when,then,assErr);
