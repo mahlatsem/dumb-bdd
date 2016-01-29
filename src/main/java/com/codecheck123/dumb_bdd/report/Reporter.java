@@ -20,25 +20,5 @@ public abstract class Reporter implements Serializable {
 		this.assertionError = assErr;
 	}
 
-	public String getUserStory() {
-		return userStory;
-	}
-
-	public List<String> getGiven() {
-		return given;
-	}
-
-	public String getWhen() {
-		return when;
-	}
-
-	public String getThen() {
-		return then;
-	}
-
-	public AssertionError getAssertionError() {
-		return assertionError;
-	}
-
 	public abstract void write();
 }
