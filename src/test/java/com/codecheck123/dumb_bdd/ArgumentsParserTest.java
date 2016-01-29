@@ -1,13 +1,14 @@
 package com.codecheck123.dumb_bdd;
 
 import static org.junit.Assert.*;
+import static net.trajano.commons.testing.UtilityClassTestUtil.*;
 
 import java.util.List;
 
 import org.junit.Test;
 
 public class ArgumentsParserTest {
-
+	
 	@Test
 	public void testParseExpressionToArguments_withoutPlurals() {
 		//given
@@ -80,7 +81,48 @@ public class ArgumentsParserTest {
 		//when: parsing the input
 		List<String> args = ArgumentsParser.parseExpressionToArguments(input);
 		
-		//then string array of size 2 should be returned with 30 in index 0
+		//then string array of size 0 should be returned
 		assertEquals(0, args.size());
+	}
+	
+	@Test
+	public void testParseExpressionToArguments_NULL(){
+		//given
+		String input = null;
+
+		//when: parsing the input
+		List<String> args = ArgumentsParser.parseExpressionToArguments(input);
+
+		//then string array of size 0 should be returned
+		assertEquals(0, args.size());
+	}
+	
+	@Test
+	public void testParseExpressionToArguments_EmptyInput(){
+		//given
+		String input = "";
+		
+		//when: parsing the input
+		List<String> args = ArgumentsParser.parseExpressionToArguments(input);
+		
+		//then string array of size 0 should be returned
+		assertEquals(0, args.size());
+	}
+	
+	@Test
+	public void testUtilityValidity(){
+		assertUtilityClassWellDefined(ArgumentsParser.class);
+	}
+	
+	@Test
+	public void testParseExpressionToArguments_WithEscapedSingleQuotes(){
+		//given
+		String input = "something with 'a' and '\'escaped single quote\'' as input";
+
+		//when: parsing the input
+		List<String> args = ArgumentsParser.parseExpressionToArguments(input);
+
+		//then string array of size 2 should be returned
+		assertEquals(2, args.size());
 	}
 }
