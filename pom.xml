@@ -6,6 +6,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<version.junit>4.11</version.junit>
 		<version.commons-testing>1.0.1</version.commons-testing>
 		<version.fest>1.4</version.fest>
