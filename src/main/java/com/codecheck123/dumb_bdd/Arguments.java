@@ -7,10 +7,14 @@ import java.util.List;
 public class Arguments {
 	private final List<Arg> args;
 	
-	public Arguments(List<String> args){
-		this.args = new ArrayList<Arg>(args.size());
-		for(String arg : args){
-			this.args.add(new Arg(arg));
+	Arguments(List<String> args){
+		if(args == null){
+			this.args = new ArrayList<Arg>(5);
+		}else {
+			this.args = new ArrayList<Arg>(args.size());
+			for(String arg : args){
+				this.args.add(new Arg(arg));
+			}
 		}
 	}
 
