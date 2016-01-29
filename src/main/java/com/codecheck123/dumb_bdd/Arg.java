@@ -4,7 +4,14 @@ public class Arg {
 
 	private final Object arg;
 	
-	public Arg(Object arg) {
+	/**
+	 * Throws NullPointerException if arg is Null
+	 * @param arg
+	 */
+	Arg(Object arg) {
+		if(arg == null){
+			throw new NullPointerException("arg cannot be null");
+		}
 		this.arg = arg;
 	}
 
