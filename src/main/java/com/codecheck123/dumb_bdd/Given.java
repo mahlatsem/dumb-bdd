@@ -6,7 +6,7 @@ import java.util.List;
 public class Given extends AbstractBDD {
 
 	private final UserStory userStory;
-	private final List<String> given = new ArrayList<String>();;
+	private final List<String> given = new ArrayList<String>();
 	
 	Given(UserStory userStory, String bddExpression, ExpressionRunner runner){
 		this.userStory = userStory;
@@ -18,7 +18,7 @@ public class Given extends AbstractBDD {
 		return userStory;
 	}
 
-	List<String> getAll() {
+	List<String> getAllGiven() {
 		return given;
 	}
 	
