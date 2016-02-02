@@ -1,10 +1,12 @@
-package com.codecheck123.dumb_bdd;
+package com.codecheck123.dumbbdd;
 
 import java.util.Arrays;
 
 import static org.fest.assertions.Assertions.*;
 
 import org.junit.Test;
+
+import com.codecheck123.dumbbdd.Arguments;
 
 public class ArgumentsTest {
 	final Arguments arguments = new Arguments(Arrays.asList("0","1","2","3","4"));

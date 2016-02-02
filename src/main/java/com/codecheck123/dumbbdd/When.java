@@ -1,10 +1,10 @@
-package com.codecheck123.dumb_bdd;
+package com.codecheck123.dumbbdd;
 
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import com.codecheck123.dumb_bdd.report.ReportRunner;
+import com.codecheck123.dumbbdd.report.ReportRunner;
 
 public class When extends AbstractBDD {
 

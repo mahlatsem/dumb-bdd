@@ -1,9 +1,12 @@
-package com.codecheck123.dumb_bdd.report;
+package com.codecheck123.dumbbdd.report;
 
 import java.util.Arrays;
 import java.util.List;
 
 import org.junit.Test;
+
+import com.codecheck123.dumbbdd.report.ConsoleReporter;
+import com.codecheck123.dumbbdd.report.Reporter;
 
 public class ConsoleReporterTest {
 	

@@ -1,4 +1,4 @@
-package com.codecheck123.dumb_bdd.report;
+package com.codecheck123.dumbbdd.report;
 
 import java.util.List;
 

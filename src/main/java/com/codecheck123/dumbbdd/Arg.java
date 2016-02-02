@@ -1,4 +1,4 @@
-package com.codecheck123.dumb_bdd;
+package com.codecheck123.dumbbdd;
 
 public class Arg {
 

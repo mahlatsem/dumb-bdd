@@ -1,4 +1,4 @@
-package com.codecheck123.dumb_bdd;
+package com.codecheck123.dumbbdd;
 
 import java.util.ArrayList;
 import java.util.List;

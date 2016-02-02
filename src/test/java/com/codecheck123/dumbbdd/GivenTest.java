@@ -1,10 +1,15 @@
-package com.codecheck123.dumb_bdd;
+package com.codecheck123.dumbbdd;
 
 import static org.junit.Assert.*;
 
 import static org.fest.assertions.Assertions.*;
 
 import org.junit.Test;
+
+import com.codecheck123.dumbbdd.Arguments;
+import com.codecheck123.dumbbdd.ExpressionRunner;
+import com.codecheck123.dumbbdd.Given;
+import com.codecheck123.dumbbdd.UserStory;
 
 public class GivenTest {
 
