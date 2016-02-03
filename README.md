@@ -11,7 +11,7 @@ Learn more about BDD from [wikipedia](https://en.wikipedia.org/wiki/Behavior-dri
 #Why Another BDD Tool?
 There is already a [number of BDD tools](https://dzone.com/articles/brief-comparison-bdd) in existence that may be used for Java, and although these have paved the way for BDD into the Java world for many years, they do come with their own set of frustrations.  
 
-__ Out of the major BDD tools, there are 4 approaches taken in providing BDD:__ 
+**Out of the major BDD tools, there are 4 approaches taken in providing BDD:** 
 
 **1.	Using the power of dynamic programming languages**  
 
