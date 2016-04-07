@@ -5,7 +5,7 @@ import java.util.ServiceLoader;
 
 import com.codecheck123.dumbbdd.report.service.ReporterService;
 
-public class ReportRunner implements Runnable {
+public class ReportRunner {
 	
 	private final Report report;
 	private static final String NO_REPORTER_SERVICE_LOADED = "Make sure you are implementing ReporterService "
