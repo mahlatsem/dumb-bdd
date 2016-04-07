@@ -1,5 +1,7 @@
 package com.codecheck123.dumbbdd.report;
 
+import java.util.Arrays;
+
 import org.junit.Test;
 
 import com.codecheck123.dumbbdd.Scenario;
@@ -15,7 +17,16 @@ public class ReportRunnerTest {
 				.create()
 				.scenarioWithTitle("Running reporter");
 		
-		ReportRunner runner = new ReportRunner(null);
+		Report report = new Report.ReportBuilder()
+				.setUserStoryTitle("Reporting")
+				.setUserStory("fill Story")
+				.setScenarioTitle("Reporting")
+				.setAllGiven(Arrays.asList("a","b"))
+				.setWhen("when")
+				.setThen("then")
+				.setAssertionError(null)
+				.build();
+		ReportRunner runner = new ReportRunner(report);
 		runner.run();
 	}
 }
