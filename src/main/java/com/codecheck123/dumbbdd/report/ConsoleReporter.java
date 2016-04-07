@@ -28,13 +28,6 @@ public class ConsoleReporter extends Reporter {
 		if(report.getAssertionError() != null){
 			if(report.getAssertionError().getMessage() != null){
 				System.out.println("Failed: "+report.getAssertionError().getMessage());
-			}else{
-				if(report.getAssertionError().getSuppressed() != null){
-					Throwable[] suppresed = report.getAssertionError().getSuppressed();
-					for(Throwable th : suppresed){
-						System.out.println("Suppresed Error: "+th.getMessage());
-					}
-				}
 			}
 			System.out.println();
 		}else{
