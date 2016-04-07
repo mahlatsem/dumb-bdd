@@ -18,17 +18,19 @@ public class ConsoleReporterTest {
 	public void testWrite_MoreThanOneGiven() {
 		List<String> allGiven = Arrays.asList("input a","input b");
 		AssertionError assErr = new AssertionError();
+		Report report = buildReport(allGiven,assErr);
 		
-		Reporter reporter = new ConsoleReporter(userStory, allGiven, when, then, assErr);
+		Reporter reporter = new ConsoleReporter(report);
 		reporter.write();
 	}
-	
+
 	@Test
 	public void testWrite_OneGiven() {
 		List<String> allGiven = Arrays.asList("input a");
 		AssertionError assErr = new AssertionError();
+		Report report = buildReport(allGiven,assErr);
 		
-		Reporter reporter = new ConsoleReporter(userStory, allGiven, when, then, assErr);
+		Reporter reporter = new ConsoleReporter(report);
 		reporter.write();
 	}
 	
@@ -36,9 +38,22 @@ public class ConsoleReporterTest {
 	public void testWrite_WhithoutAssertionError() {
 		List<String> allGiven = Arrays.asList("input a");
 		AssertionError assErr = null;
+		Report report = buildReport(allGiven,assErr);
 		
-		Reporter reporter = new ConsoleReporter(userStory, allGiven, when, then, assErr);
+		Reporter reporter = new ConsoleReporter(report);
 		reporter.write();
 	}
 
+
+	private Report buildReport(List<String> allGiven, AssertionError assErr) {
+		Report report = new Report.ReportBuilder()
+				.setUserStoryTitle("UserStory Title")
+				.setUserStory(userStory)
+				.setAllGiven(allGiven)
+				.setWhen(when)
+				.setThen(then)
+				.setAssertionError(assErr)
+				.build();
+		return report;
+	}
 }
