@@ -1,8 +1,13 @@
-package com.codecheck123.dumbbdd;
+package com.codecheck123.dumbbdd.dsl;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+
+import com.codecheck123.dumbbdd.dsl.Arguments;
+import com.codecheck123.dumbbdd.dsl.ExpressionRunner;
+import com.codecheck123.dumbbdd.dsl.Scenario;
+import com.codecheck123.dumbbdd.dsl.UserStory;
 
 public class ScenarioTest {
 	UserStory story = new UserStory.WithTitle("Creating different scenarios")

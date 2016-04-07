@@ -4,9 +4,9 @@ import java.util.Arrays;
 
 import org.junit.Test;
 
-import com.codecheck123.dumbbdd.Arguments;
-import com.codecheck123.dumbbdd.ExpressionRunner;
-import com.codecheck123.dumbbdd.UserStory;
+import com.codecheck123.dumbbdd.dsl.Arguments;
+import com.codecheck123.dumbbdd.dsl.ExpressionRunner;
+import com.codecheck123.dumbbdd.dsl.UserStory;
 
 public class ReportRunnerTest {
 

@@ -1,4 +1,4 @@
-package com.codecheck123.dumbbdd;
+package com.codecheck123.dumbbdd.dsl;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
@@ -6,11 +6,12 @@ import static org.mockito.Mockito.when;
 
 import org.junit.Test;
 
-import com.codecheck123.dumbbdd.Arguments;
-import com.codecheck123.dumbbdd.ExpressionRunner;
-import com.codecheck123.dumbbdd.Given;
-import com.codecheck123.dumbbdd.UserStory;
-import com.codecheck123.dumbbdd.When;
+import com.codecheck123.dumbbdd.dsl.Arguments;
+import com.codecheck123.dumbbdd.dsl.ExpressionRunner;
+import com.codecheck123.dumbbdd.dsl.Given;
+import com.codecheck123.dumbbdd.dsl.Scenario;
+import com.codecheck123.dumbbdd.dsl.UserStory;
+import com.codecheck123.dumbbdd.dsl.When;
 
 public class WhenTest {
 

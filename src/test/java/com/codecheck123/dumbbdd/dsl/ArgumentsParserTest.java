@@ -1,4 +1,4 @@
-package com.codecheck123.dumbbdd;
+package com.codecheck123.dumbbdd.dsl;
 
 import static org.junit.Assert.*;
 import static net.trajano.commons.testing.UtilityClassTestUtil.*;
@@ -7,7 +7,7 @@ import java.util.List;
 
 import org.junit.Test;
 
-import com.codecheck123.dumbbdd.ArgumentsParser;
+import com.codecheck123.dumbbdd.dsl.ArgumentsParser;
 
 public class ArgumentsParserTest {
 	

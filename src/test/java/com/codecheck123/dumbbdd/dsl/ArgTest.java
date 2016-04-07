@@ -1,11 +1,11 @@
-package com.codecheck123.dumbbdd;
+package com.codecheck123.dumbbdd.dsl;
 
 import static org.fest.assertions.Assertions.*;
 import static org.junit.Assert.assertFalse;
 
 import org.junit.Test;
 
-import com.codecheck123.dumbbdd.Arg;
+import com.codecheck123.dumbbdd.dsl.Arg;
 
 public class ArgTest {
 	
