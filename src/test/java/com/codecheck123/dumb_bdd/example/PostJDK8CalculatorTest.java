@@ -98,7 +98,13 @@ public class PostJDK8CalculatorTest {
 		userStory.scenarioWithTitle("Disallow division by zero")
 			.given("numerator '5' and denominator '0'", (args) -> {
 				cal.add(args.first().asInt());
-				cal.divide(args.second().asInt());
+				cal.divide(args.second().asInt()); 
+				/*
+					TODO: Find a way beyond this point:
+					Test framework will abort the Test here after matching thrown expected Exception.
+					Still thinking of a way to work with that seamlessly
+				*/
 			});
+		
 	}
 }
