@@ -1,4 +1,4 @@
-package com.codecheck123.dumb_bdd.example;
+package com.codecheck123.dumbbdd.example;
 
 public class Calculator {
 	private int result = 0;

@@ -1,4 +1,4 @@
-package com.codecheck123.dumb_bdd.example;
+package com.codecheck123.dumbbdd.example;
 
 import static org.junit.Assert.assertEquals;
 
@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.codecheck123.dumbbdd.UserStory;
+import com.codecheck123.dumbbdd.example.Calculator;
 
 public class PostJDK8CalculatorTest {
 	private int result = 0;
