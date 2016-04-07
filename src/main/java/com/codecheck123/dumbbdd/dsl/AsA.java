@@ -1,4 +1,4 @@
-package com.codecheck123.dumbbdd;
+package com.codecheck123.dumbbdd.dsl;
 
 public class AsA {
 	private static final String I_WANT = "I want ";

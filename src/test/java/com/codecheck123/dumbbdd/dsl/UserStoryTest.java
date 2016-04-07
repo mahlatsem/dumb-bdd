@@ -1,10 +1,10 @@
-package com.codecheck123.dumbbdd;
+package com.codecheck123.dumbbdd.dsl;
 
 import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
 
-import com.codecheck123.dumbbdd.UserStory;
+import com.codecheck123.dumbbdd.dsl.UserStory;
 
 public class UserStoryTest {
 	

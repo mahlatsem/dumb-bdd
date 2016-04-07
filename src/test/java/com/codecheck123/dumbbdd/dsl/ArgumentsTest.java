@@ -1,4 +1,4 @@
-package com.codecheck123.dumbbdd;
+package com.codecheck123.dumbbdd.dsl;
 
 import java.util.Arrays;
 
@@ -6,7 +6,7 @@ import static org.fest.assertions.Assertions.*;
 
 import org.junit.Test;
 
-import com.codecheck123.dumbbdd.Arguments;
+import com.codecheck123.dumbbdd.dsl.Arguments;
 
 public class ArgumentsTest {
 	final Arguments arguments = new Arguments(Arrays.asList("0","1","2","3","4"));

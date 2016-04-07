@@ -1,4 +1,4 @@
-package com.codecheck123.dumbbdd;
+package com.codecheck123.dumbbdd.dsl;
 
 public abstract class GoalOrAction {
 	private static final String SO_THAT = "so that ";
