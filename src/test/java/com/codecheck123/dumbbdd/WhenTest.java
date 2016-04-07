@@ -14,23 +14,23 @@ import com.codecheck123.dumbbdd.When;
 
 public class WhenTest {
 
-	@Test(expected=NullPointerException.class)
-	public void testThen_NullGiven() {
+	@Test(expected=IllegalArgumentException.class)
+	public void givenIsNull() {
 		new When(null, "when expression");
 	}
 	
-	@Test(expected=NullPointerException.class)
-	public void testThen_BddExpressionNull() {
+	@Test(expected=IllegalArgumentException.class)
+	public void bddExpressionIsNull() {
 		new When(mock(Given.class), null);
 	}
 	
-	@Test(expected=NullPointerException.class)
-	public void testThen_BddExpressionEmpty() {
+	@Test(expected=IllegalArgumentException.class)
+	public void bddExpressionIsEmpty() {
 		new When(mock(Given.class), "");
 	}
 	
 	@Test(expected=AssertionError.class)
-	public void testThen_assertInExpressionFails() {
+	public void assertInExpressionFails() {
 		new When(getDummyGiven(), "bddExpression")
 		.then("then expression", new ExpressionRunner() {
 			public void expression(Arguments args) {
@@ -40,17 +40,42 @@ public class WhenTest {
 	}
 
 	@Test
-	public void testThen_shouldNotThrowException() {
+	public void noExceptionThrownWhenTestFrameworkTestPasses() {
 		When when = new When(getDummyGiven(), "bddExpression");
 		when.then("then expression", new ExpressionRunner() {
 			public void expression(Arguments args) {}
 		});
 	}
 	
+	@Test(expected=IllegalArgumentException.class)
+	public void theBddExpressionIsNull() {
+		When when = new When(getDummyGiven(), "bddExpression");
+		String bddExpression = null;
+		
+		when.then(bddExpression, new ExpressionRunner() {
+			public void expression(Arguments args) {}
+		});
+	}
+	
+	@Test(expected=IllegalArgumentException.class)
+	public void theBddExpressionIsEmpty() {
+		When when = new When(getDummyGiven(), "bddExpression");
+		String bddExpression = "";
+		
+		when.then(bddExpression, new ExpressionRunner() {
+			public void expression(Arguments args) {}
+		});
+	}
 
 	private Given getDummyGiven() {
 		Given given = mock(Given.class);
-		when(given.getUserStory()).thenReturn(new UserStory("some story"));
+		UserStory userStory = new UserStory.WithTitle("Given Tests")
+				.asA("Developer")
+				.iCan("Write tests using bdd format")
+				.create();
+		
+		Scenario scenario = userStory.scenarioWithTitle("Dealing With Testing Framework Results");
+		when(given.getScenario()).thenReturn(scenario);
 		return given;
 	}
 }
