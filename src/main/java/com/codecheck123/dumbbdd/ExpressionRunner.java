@@ -1,10 +1,7 @@
 package com.codecheck123.dumbbdd;
 
 
-public abstract class ExpressionRunner {
-	ExpressionRunner(){
-		
-	}
+public interface ExpressionRunner {
 
-	abstract void expression(Arguments args);
+	public void expression(Arguments args);
 }
