@@ -1,7 +1,7 @@
 package com.codecheck123.dumbbdd;
 
 public abstract class GoalOrAction {
-	private static final String SO_THAT = " so that ";
+	private static final String SO_THAT = "so that ";
 	
 	protected UserStory userStory;
 	

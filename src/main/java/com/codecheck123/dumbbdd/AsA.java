@@ -1,8 +1,8 @@
 package com.codecheck123.dumbbdd;
 
 public class AsA {
-	private static final String I_WANT = ", I want ";
-	private static final String I_CAN = ", I can ";
+	private static final String I_WANT = "I want ";
+	private static final String I_CAN = "I can ";
 	
 	private UserStory userStory;
 	
