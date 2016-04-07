@@ -5,17 +5,17 @@ import java.util.List;
 
 public class Given extends AbstractBDD {
 
-	private final UserStory userStory;
+	private final Scenario scenario;
 	private final List<String> given = new ArrayList<String>();
 	
-	Given(UserStory userStory, String bddExpression, ExpressionRunner runner){
-		this.userStory = userStory;
+	Given(Scenario scenario, String bddExpression, ExpressionRunner runner){
+		this.scenario = scenario;
 		given.add(bddExpression);
 		evaluateExpression(bddExpression,runner);
 	}
 
-	UserStory getUserStory() {
-		return userStory;
+	Scenario getScenario() {
+		return scenario;
 	}
 
 	List<String> getAllGiven() {
@@ -23,6 +23,7 @@ public class Given extends AbstractBDD {
 	}
 	
 	public Given and(String bddExpression, ExpressionRunner runner){
+		Util.checkForNotNullOrEmpty(bddExpression);
 		given.add(bddExpression);
 		evaluateExpression(bddExpression,runner);
 		return this;
