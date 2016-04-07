@@ -13,7 +13,7 @@ public class ConsoleReporter extends Reporter {
 	@Override
 	public void write(){
 		System.out.println("UserStory: "+report.getUserStorytitle());
-		System.out.println(report.getUserStory()+"\n");
+		System.out.println(report.getUserStory());
 		System.out.println("Scenario: "+report.getScenarioTitle());
 		List<String> givenStatements = report.getAllGiven();
 		for(int i = 0; i < givenStatements.size(); i++){
