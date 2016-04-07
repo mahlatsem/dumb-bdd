@@ -1,9 +1,6 @@
 package com.codecheck123.dumbbdd;
 
 import java.util.List;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
 import com.codecheck123.dumbbdd.report.Report;
 import com.codecheck123.dumbbdd.report.ReportRunner;
 
@@ -12,7 +9,6 @@ public class When extends AbstractBDD {
 	private final Given given;
 	private final String when;
 	private AssertionError assErr;
-	private static final ExecutorService es = Executors.newCachedThreadPool();
 
 	/**
 	 * Throws IllegalArgumentException if parameters given or bddExpression is Null 
@@ -38,9 +34,7 @@ public class When extends AbstractBDD {
 			throw e;
 		}finally{
 			Report report = buildReport(then);
-			es.execute(
-				new ReportRunner(report)
-			);
+			new ReportRunner(report).run();
 		}
 	}
 
