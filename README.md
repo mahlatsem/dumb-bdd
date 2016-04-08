@@ -9,19 +9,18 @@ With BDD, an application is specked & designed by describing how it should behav
 Learn more about BDD from [wikipedia](https://en.wikipedia.org/wiki/Behavior-driven_development).
 
 #What is dumb-bdd?
-Dumb-bdd is a pure Java based DSL (domain specific language) that guides one to write a
-User Story from which one can create multiple Scenarios with acceptance tests following BDD without
-much thinking, used seamlessly with Testing framework of choice as it comes without any special runners, just have the dependency on your classpath and you are done. It also provides some plugin based reporting.  
+Dumb-bdd is a pure Java based **DSL** (domain specific language) that guides one to write a
+**User Story** from which one can create **multiple Scenarios** with acceptance tests following **BDD** without much thinking, used seamlessly with Testing framework of choice as it comes without any special runners, just have the dependency on your classpath and you are done. It also provides some plugin based reporting.  
 
 The User Story also helps you to make sure your classes follow the Single Responsibility Principle,
 because once you find a test method needing a different User Story, then you should move the functionality under test into a different class with its own test class.
 
 #####Usage  
-You only need access to `com.codecheck123.dumbbdd.dsl.UserStory` and from there, your IDE will guide you through the rest.  
+You only need access to `com.codecheck123.dumbbdd.dsl.UserStory` and from there, your IDE will guide you through the rest. Compiled to Java 6, so you can still use with Anonymous classes, you should work on upgrading to Java 8  
 #####Example:  
 
 	public class PostJDK8CalculatorTest {
-		private int result = 0; //can't reassign a local variable in an annonymous class
+		private int result = 0; //can't reassign a local variable in an anonymous class
 		
 	//create the one User Story for the different Test Scenarios to follow
 		private final UserStory userStory = new UserStory
@@ -91,7 +90,7 @@ You only need access to `com.codecheck123.dumbbdd.dsl.UserStory` and from there,
 For default, check console, an HTMLReporter is work in progress, you may add your own ReporterService by implementing `com.codecheck123.dumbbdd.report.service.ReporterService` then have your service automatically loaded by the jdk [ServiceLoader](https://docs.oracle.com/javase/6/docs/api/java/util/ServiceLoader.html).
 
 ##Weird parts of Dumb-BDD
-1.  As seen in the example above `private int result = 0;` the result variable used throught your tests must be the Test class' instance member, because we can't assign a method local variable within an anonymous class, especially since we want to use the results from a `when` inside a `then` lambda.
+1.  As seen in the example above `private int result = 0;` the result variable used throughout your tests must be the Test class' instance member, because we can't assign a method local variable within an anonymous class, especially since we want to use the results from a `when` inside a `then` lambda.
 2.  Although Testing for Exceptions continues as normal as per Test framework you use, the Scenario currently does not get reported on by Dumb-BDD, but your Test framework will still give you the expected results. 
 
 
